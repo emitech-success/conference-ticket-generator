@@ -7,12 +7,12 @@ export const links = [
   },
   {
     id: 2,
-    url: '/mytickets',
+    url: '/',
     text: 'My tickets',
   },
   {
     id: 3,
-    url: '/aboutprojects',
+    url: '/',
     text: 'About projects',
   },
 ]

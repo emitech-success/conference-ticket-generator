@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { BiCloudDownload } from "react-icons/bi";
+import { BiCloudDownload } from "react-icons/bi";
 
 
 const apiBaseUrl = "https://api.cloudinary.com/v1_1/di2p08ndb/image/upload"
@@ -66,22 +66,27 @@ const AttendeeDetails = ({formData, setFormData, loading, setLoading}) => {
       navigate('/')
     }
   return (
-    <div className="max-w-[550px] mx-auto mt-3 rounded-lg text-white border-[#0E464F] border-2 shadow-md p-4">
+    <div className="max-w-[550px] mx-auto mt-6 rounded-lg text-white border-[#0E464F] border-2 shadow-md p-4">
       <div>
         <div className="flex justify-between">
           <h1 className="capitalize">Attendee Details</h1>
           <p>step 2/3</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="rounded-lg border-[#0E464F] border-2 p-4  shadow-md mt-4 bg-[#08252B]">
-          <div className="p-4 text-center mb-4 rounded-lg border-[#0E464F]   border-1 shadow-md flex flex-col items-start">
+        <form onSubmit={handleSubmit} className="rounded-lg border-[#0E464F] border-2 p-4  shadow-md mt-4 bg-[#08252B] ">
+          <div className="p-4 text-center mb-4 rounded-lg bg-[#041B20] border-[#0E464F]   border-1 shadow-md flex flex-col items-start relative">
             <label htmlFor="avatar">Upload profile photo</label>
             <input type="file" name="avatar" id="avatar"
-            className="p-6 border-4 border-[#0E464F] mt-4 w-full"
+            className="p-8 border-4 border-[#0E464F] mt-4 w-full"
             onChange={handleFileUpload}
             />
            {loading && <h6>Uploading...</h6>}
               {errors.avatar && <p className="text-red-500 text-sm">{errors.avatar}</p>}
+
+              <div className="flex flex-col items-center justify-center absolute bg-[#0E464F] border-[#1C889A] border-2 h-[120px] w-[120px] rounded-lg text-center p-3 left-[34%] top-[25%]">
+                <BiCloudDownload />
+                <span>Drag & drop or click to upload</span>
+              </div>
           </div>
 
           <div className="rounded-lg border-[#0E464F] border-2 shadow-md mt-4"></div>
@@ -105,6 +110,7 @@ const AttendeeDetails = ({formData, setFormData, loading, setLoading}) => {
             <label htmlFor="email">Enter your email *</label>
             <input type="email" name="email" id="email"
             className="p-3 border-2 mt-4 w-full rounded-lg border-[#0E464F]"
+            placeholder="hello@avioflagos.io"
             value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })

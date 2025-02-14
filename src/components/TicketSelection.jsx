@@ -1,6 +1,7 @@
 import { BiLocationPlus } from "react-icons/bi";
 import TicketList from "./TicketList";
 import { useNavigate } from "react-router-dom";
+import "@fontsource/road-rage";
 
 const TicketSelection = () => {
   const navigate = useNavigate()
@@ -8,7 +9,7 @@ const TicketSelection = () => {
     navigate('/')
   }
   return (
-    <div className="max-w-[550px] mx-auto mt-3 rounded-lg text-white border-[#0E464F] border-2 shadow-md p-4">
+    <div className="max-w-[550px] mx-auto mt-6 rounded-lg text-white border-[#0E464F] border-2 shadow-md p-4">
       <div>
         <div className="flex justify-between">
           <h1>Ticket selection</h1>
@@ -17,13 +18,13 @@ const TicketSelection = () => {
 
         <div className="rounded-lg border-[#0E464F] border-2 p-4  shadow-md mt-4 bg-[#08252B]">
           <div className="p-4 text-center mb-4 rounded-lg border-[#0E464F]   border-1 shadow-md">
-            <h2>Techember Fest ”25</h2>
+            <h2 className="text-2xl md:text-4xl mb-2 font-bold">Techember Fest ”25</h2>
             <p>
               Join us for an unforgettable experience at [Event Name]! Secure
               your spot now.
             </p>
             <p>
-              {" "}
+    
               <BiLocationPlus /> <span>[Event Name]</span> ||{" "}
               <span>March 15, 2025 | 7:00 PM</span>
             </p>
@@ -70,8 +71,6 @@ const TicketSelection = () => {
               >
                 cancel
               </button>
-              
-
             
               <button
                 type="button"

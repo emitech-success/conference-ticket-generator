@@ -13,16 +13,16 @@ const TicketReady = ({ formData }) => {
   console.log(formData);
 
   return (
-    <div className="max-w-[650px] mx-auto mt-3 rounded-lg text-white border-[#0E464F] border-2 shadow-md p-8">
-      <h4 className="font-bold text-center">Your Ticket is Booked!</h4>
+    <div className="max-w-[650px] mx-auto mt-6 rounded-lg text-white border-[#0E464F] border-2 shadow-md p-8">
+      <h4 className="font-bold text-center text-3xl mb-3">Your Ticket is Booked!</h4>
       <p className="text-center">
-        Check your email for a copy or you can download
+        Check your email for a copy or you can <span className="font-bold">download</span> 
       </p>
 
       <div className="max-w-[400px] mx-auto rounded-lg border-[#0E464F] border-2 p-4  shadow-md mt-4 bg-[#08252B] ">
         <div className="border-[#0E464F] border-2 rounded-2xl flex flex-col justify-center items-center p-4">
           <div className="p-4 text-center mb-4 ">
-            <h2>Techember Fest ”25</h2>
+            <h2 className="text-xl font-bold md:text-3xl mb-3">Techember Fest ”25</h2>
             <p>
               Join us for an unforgettable experience at [Event Name]! Secure
               your spot now.
@@ -46,7 +46,7 @@ const TicketReady = ({ formData }) => {
             <div className="border-2 border-[#12464E] p-2 text-start">
               <span>Enter your name:</span> <span className="text-white">{fullName}</span>
             </div>
-            <div className="border-2 border-[#12464E] p-2 text-start">
+            <div className="border-2 border-[#12464E] p-2 text-start overflow-hidden">
               <span>Enter your email:</span>{" "} <span className="text-white text-wrap text-start">{email}</span>
             </div>
             <div className="border-2 border-[#12464E] p-2 text-start">
