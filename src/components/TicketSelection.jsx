@@ -1,8 +1,12 @@
 import { BiLocationPlus } from "react-icons/bi";
 import TicketList from "./TicketList";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TicketSelection = () => {
+  const navigate = useNavigate()
+  const handleBtn =()=>{
+    navigate('/')
+  }
   return (
     <div className="max-w-[550px] mx-auto mt-3 rounded-lg text-white border-[#0E464F] border-2 shadow-md p-4">
       <div>
@@ -53,42 +57,30 @@ const TicketSelection = () => {
               <option value="5" className="bg-[#0E464F]">
                 5
               </option>
-              <option value="6" className="bg-[#0E464F]">
-                6
-              </option>
-              <option value="7" className="bg-[#0E464F]">
-                7
-              </option>
-              <option value="8" className="bg-[#0E464F]">
-                8
-              </option>
-              <option value="9" className="bg-[#0E464F]">
-                9
-              </option>
-              <option value="10" className="bg-[#0E464F]">
-                10
-              </option>
+              
             </select>
           </div>
 
           <div className="mt-4 flex flex-col-reverse w-full gap-4 md:flex-row min-w-[220px] justify-between capitalize">
-           
+          
               <button
                 type="button"
                 className="w-full rounded-lg bg-transparent border-[#0E464F] border-2 p-3  hover:bg-[#24A0B5]"
+                onClick={handleBtn}
               >
                 cancel
               </button>
-           
+              
 
             
               <button
                 type="button"
                 className=" w-full p-3 bg-[#0E464F] rounded-lg hover:bg-[#24A0B5] transition"
+                onClick={() => navigate('/ticketdetails')}
               >
                 next
               </button>
-            
+              
           </div>
         </div>
       </div>
